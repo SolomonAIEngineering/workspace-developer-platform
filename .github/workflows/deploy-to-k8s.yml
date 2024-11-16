@@ -72,13 +72,11 @@ jobs:
               --values ./helm-charts/infisical/values.yaml \
               --namespace platform \
               --create-namespace \
-              --atomic \
               --timeout 10m
           else
             echo "Existing release found. Performing upgrade..."
             helm upgrade infisical ./helm-charts/infisical \
               --values ./helm-charts/infisical/values.yaml \
               --namespace platform \
-              --atomic \
               --timeout 10m
           fi
