@@ -1,0 +1,44 @@
+name: Production Deployment - Developer Platform
+
+on:
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+
+permissions:
+  contents: write # needed to write releases
+  id-token: write # needed for keyless signing
+  packages: write # needed for ghcr access
+
+env:
+  KUBERNETES_VERSION: 1.26.0
+  HELM_CHART_PATH: helm-charts/developer-platform
+  DOCKER_IMAGE: docker.io/infisical/infisical
+  GHCR_REGISTRY: ghcr.io/groundnuty
+  K8S_VERSION: "1.28.0"
+  HELM_VERSION: 3.8.1
+  GO_VERSION: 1.21.x
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: .
+      cluster: ${{ secrets.PROD_CLUSTER_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Update SHA
+        run: echo $GITHUB_SHA > $GITHUB_WORKSPACE/sha/_meta
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+      - name: Deploy To Production Environment
+        working-directory: ${{env.working-directory}}
+        run: |
+          doctl kubernetes cluster kubeconfig save --expiry-seconds 600 ${{env.cluster}}
+          helm upgrade --install developer-platform ./helm-charts/developer-platform --values ./helm-charts/developer-platform/values.yaml -n platform

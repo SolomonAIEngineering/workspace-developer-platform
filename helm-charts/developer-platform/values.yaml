@@ -1,8 +1,8 @@
 # -- Overrides the default release name
-nameOverride: ""
+nameOverride: "developer-platform"
 
 # -- Overrides the full name of the release, affecting resource names
-fullnameOverride: ""
+fullnameOverride: "developer-platform"
 
 infisical:
   enabled: true # -- Enable Infisical chart deployment
@@ -72,7 +72,7 @@ ingress:
   # -- Enable or disable ingress configuration
   enabled: true
   # -- Hostname for ingress access, e.g., app.example.com
-  hostName: ""
+  hostName: "developer.solomon-ai.app"
   # -- Specifies the ingress class, useful for multi-ingress setups
   ingressClassName: nginx
 
@@ -92,7 +92,7 @@ ingress:
 
 postgresql:
   # -- Enables an in-cluster PostgreSQL deployment. To achieve HA for Postgres, we recommend deploying https://github.com/zalando/postgres-operator instead.
-  enabled: true
+  enabled: false
   # -- PostgreSQL resource name
   name: "postgresql"
   # -- Full name override for PostgreSQL resources
@@ -108,12 +108,13 @@ postgresql:
 
   useExistingPostgresSecret:
     # -- Set to true if using an existing Kubernetes secret that contains PostgreSQL connection string
-    enabled: false
+    enabled: true
+    connectionUri: "postgresql://doadmin:AVNS_rh8slc0GWc_xtiEaEls@solomon-ai-postgresql-do-user-14647471-0.b.db.ondigitalocean.com:25061/developer-platform-pool?sslmode=require"
     existingConnectionStringSecret:
       # -- Kubernetes secret name containing the PostgreSQL connection string
-      name: ""
+      name: "postgresql-secrets"
       # -- Key name in the Kubernetes secret that holds the connection string
-      key: ""
+      key: "postgres-connection-uri"
 
 redis:
   # -- Enables an in-cluster Redis deployment
@@ -122,6 +123,7 @@ redis:
   name: "redis"
   # -- Full name override for Redis resources
   fullnameOverride: "redis"
+  connectionUri: "rediss://default:AVNS_TUoPbvQR43IlXkssCvW@solomon-ai-redis-cluster-do-user-14647471-0.b.db.ondigitalocean.com:25061"
 
   cluster:
     # -- Clustered Redis deployment
@@ -136,3 +138,11 @@ redis:
 
   # -- Redis deployment type (e.g., standalone or cluster)
   architecture: standalone
+
+# Add these sections if they don't exist
+secrets:
+  authSecret: "8918996309412229436078605756459792035539715539684460451177848588164937870338669753046625612486361951"
+  encryptionKey: ""
+
+# Site URL configuration
+siteUrl: ""
