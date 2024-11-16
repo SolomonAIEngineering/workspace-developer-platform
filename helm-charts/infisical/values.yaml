@@ -43,7 +43,7 @@ infisical:
     # -- Specific version tag of the Infisical image. View the latest version here https://hub.docker.com/r/infisical/infisical
     tag: "v0.94.1-postgres"
     # -- Pulls image only if not already present on the node
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
     # -- Secret references for pulling the image, if needed
     imagePullSecrets: []
 
