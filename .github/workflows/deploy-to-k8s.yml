@@ -37,6 +37,10 @@ jobs:
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+      - name: Build Helm dependencies
+        working-directory: ${{env.working-directory}}
+        run: |
+          helm dependency build ./helm-charts/infisical
       - name: Deploy To Production Environment
         working-directory: ${{env.working-directory}}
         run: |
