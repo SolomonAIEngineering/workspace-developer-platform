@@ -57,6 +57,7 @@ jobs:
                   context: .
                   tags: |
                       solomonai/developer-platform:latest-postgres
+                      solomonai/developer-platform:latest
                       solomonai/developer-platform:${{ steps.commit.outputs.short }}
                       solomonai/developer-platform:${{ steps.extract_version.outputs.version }}
                   platforms: linux/amd64,linux/arm64
@@ -109,6 +110,7 @@ jobs:
                   context: .
                   tags: |
                       solomonai/developer-platform-fips:latest-postgres
+                      solomonai/developer-platform-fips:latest
                       solomonai/developer-platform-fips:${{ steps.commit.outputs.short }}
                       solomonai/developer-platform-fips:${{ steps.extract_version.outputs.version }}
                   platforms: linux/amd64,linux/arm64
