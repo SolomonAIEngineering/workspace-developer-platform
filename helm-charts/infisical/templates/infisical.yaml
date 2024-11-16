@@ -67,10 +67,8 @@ spec:
         - name: DB_CONNECTION_URI
           value: {{ include "infisical.postgresDBConnectionString" . }}
         {{- end }}
-        {{- if .Values.redis.enabled }}
         - name: REDIS_URL
           value: {{ .Values.redis.connectionUri }}
-        {{- end }}
         envFrom:
         - secretRef:
             name: {{ $infisicalValues.kubeSecretRef }}
