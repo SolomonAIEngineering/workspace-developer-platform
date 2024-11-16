@@ -56,7 +56,7 @@ infisical:
     # -- Custom annotations for Infisical service
     annotations: {}
     # -- Service type, can be changed based on exposure needs (e.g., LoadBalancer)
-    type: ClusterIP
+    type: LoadBalancer
     # -- Optional node port for service when using NodePort type
     nodePort: ""
 
