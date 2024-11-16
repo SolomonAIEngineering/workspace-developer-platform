@@ -72,7 +72,7 @@ ingress:
   # -- Enable or disable ingress configuration
   enabled: true
   # -- Hostname for ingress access, e.g., app.example.com
-  hostName: ""
+  hostName: "infisical.solomon-ai.dev"
   # -- Specifies the ingress class, useful for multi-ingress setups
   ingressClassName: nginx
 
@@ -142,7 +142,7 @@ redis:
 # Add these sections if they don't exist
 secrets:
   authSecret: "iziBhFhGzeEIMu6Y7E5BR8YYobzXvbNP"
-  encryptionKey: "0kwKwWRCjP4iNrcJ"
+  encryptionKey: "0kwKwWRCjP4iNrcJ0kwKwWRCjP4iNrcJ"
 
 # Site URL configuration
-siteUrl: ""
+siteUrl: "https://infisical.solomon-ai.dev"
