@@ -49,16 +49,16 @@ jobs:
             - name: Set up Depot CLI
               uses: depot/setup-action@v1
             - name: 📦 Build backend and export to Docker
-              uses: depot/build-push-action@v1
+              uses: docker/build-push-action@v3
               with:
-                  project: 64mmf0n610
-                  token: ${{ secrets.DEPOT_PROJECT_TOKEN }}
                   push: true
+                  sbom: true
+                  provenance: true
                   context: .
                   tags: |
-                      infisical/infisical:latest-postgres
-                      infisical/infisical:${{ steps.commit.outputs.short }}
-                      infisical/infisical:${{ steps.extract_version.outputs.version }}
+                      solomonai/developer-platform:latest-postgres
+                      solomonai/developer-platform:${{ steps.commit.outputs.short }}
+                      solomonai/developer-platform:${{ steps.extract_version.outputs.version }}
                   platforms: linux/amd64,linux/arm64
                   file: Dockerfile.standalone-infisical
                   build-args: |
@@ -97,20 +97,20 @@ jobs:
               uses: docker/login-action@v2
               with:
                   username: ${{ secrets.DOCKERHUB_USERNAME }}
-                  password: ${{ secrets.DOCKERHUB_TOKEN }}
+                  password: ${{ secrets.DOCKERHUB_PASSWORD }}
             - name: Set up Depot CLI
               uses: depot/setup-action@v1
             - name: 📦 Build backend and export to Docker
-              uses: depot/build-push-action@v1
+              uses: docker/build-push-action@v3
               with:
-                  project: 64mmf0n610
-                  token: ${{ secrets.DEPOT_PROJECT_TOKEN }}
                   push: true
+                  sbom: true
+                  provenance: true
                   context: .
                   tags: |
-                      infisical/infisical-fips:latest-postgres
-                      infisical/infisical-fips:${{ steps.commit.outputs.short }}
-                      infisical/infisical-fips:${{ steps.extract_version.outputs.version }}
+                      solomonai/developer-platform-fips:latest-postgres
+                      solomonai/developer-platform-fips:${{ steps.commit.outputs.short }}
+                      solomonai/developer-platform-fips:${{ steps.extract_version.outputs.version }}
                   platforms: linux/amd64,linux/arm64
                   file: Dockerfile.fips.standalone-infisical
                   build-args: |
