@@ -70,6 +70,13 @@ jobs:
             echo "No existing release found. Performing fresh installation..."
             helm install infisical ./helm-charts/infisical \
               --values ./helm-charts/infisical/values.yaml \
+              --set smtp.password=${{ secrets.RESEND_API_KEY }} \
+              --set auth.google.clientId=${{ secrets.DEVELOPER_PLATFORM_GOOGLE_CLIENT_ID }} \
+              --set auth.google.clientSecret=${{ secrets.DEVELOPER_PLATFORM_GOOGLE_CLIENT_SECRET }} \
+              --set auth.github.clientId=${{ secrets.DEVELOPER_PLATFORM_GITHUB_CLIENT_ID }} \
+              --set auth.github.clientSecret=${{ secrets.DEVELOPER_PLATFORM_GITHUB_CLIENT_SECRET }} \
+              --set postgresql.useExistingPostgresSecret.connectionUri=${{ secrets.DEVELOPER_PLATFORM_POSTGRES_CONNECTION_URI }} \
+              --set redis.connectionUri=${{ secrets.DEVELOPER_PLATFORM_REDIS_CONNECTION_URI }} \
               --namespace platform \
               --create-namespace \
               --timeout 10m
@@ -77,6 +84,13 @@ jobs:
             echo "Existing release found. Performing upgrade..."
             helm upgrade infisical ./helm-charts/infisical \
               --values ./helm-charts/infisical/values.yaml \
+              --set smtp.password=${{ secrets.RESEND_API_KEY }} \
+              --set auth.google.clientId=${{ secrets.DEVELOPER_PLATFORM_GOOGLE_CLIENT_ID }} \
+              --set auth.google.clientSecret=${{ secrets.DEVELOPER_PLATFORM_GOOGLE_CLIENT_SECRET }} \
+              --set auth.github.clientId=${{ secrets.DEVELOPER_PLATFORM_GITHUB_CLIENT_ID }} \
+              --set auth.github.clientSecret=${{ secrets.DEVELOPER_PLATFORM_GITHUB_CLIENT_SECRET }} \
+              --set postgresql.useExistingPostgresSecret.connectionUri=${{ secrets.DEVELOPER_PLATFORM_POSTGRES_CONNECTION_URI }} \
+              --set redis.connectionUri=${{ secrets.DEVELOPER_PLATFORM_REDIS_CONNECTION_URI }} \
               --namespace platform \
               --timeout 10m
           fi

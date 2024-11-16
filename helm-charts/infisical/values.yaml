@@ -109,7 +109,7 @@ postgresql:
   useExistingPostgresSecret:
     # -- Set to true if using an existing Kubernetes secret that contains PostgreSQL connection string
     enabled: true
-    connectionUri: "postgresql://postgres.svsydxryfscozryuioby:Nz64oEdgUhIL5O7U@aws-0-us-east-2.pooler.supabase.com:6543/postgres"
+    connectionUri: ""
     existingConnectionStringSecret:
       # -- Kubernetes secret name containing the PostgreSQL connection string
       name: "infisical-secrets"
@@ -123,7 +123,7 @@ redis:
   name: "redis"
   # -- Full name override for Redis resources
   fullnameOverride: "redis"
-  connectionUri: "rediss://default:AVNS_L1LhH1eweFEzYzAEeqy@solomon-ai-redis-cluster-no-eviction-do-user-14647471-0.i.db.ondigitalocean.com:25061"
+  connectionUri: ""
 
   cluster:
     # -- Clustered Redis deployment
@@ -146,3 +146,18 @@ secrets:
 
 # Site URL configuration
 siteUrl: "https://developer.solomon-ai.dev"
+smtp:
+  host: "smtp.resend.com"
+  username: "resend"
+  password: ""
+  port: "587"
+  fromAddress: "team@inbox.solomon-ai.app"
+  fromName: "Solomon AI"
+
+auth:
+  google:
+    clientId: ""
+    clientSecret: ""
+  github:
+    clientId: ""
+    clientSecret: ""
