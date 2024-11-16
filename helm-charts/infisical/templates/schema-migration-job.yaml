@@ -6,7 +6,10 @@ metadata:
   name: "{{ .Release.Name }}-schema-migration-{{ .Release.Revision }}"
   labels:
     helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+  annotations:
+    "helm.sh/hook-delete-policy": hook-succeeded
 spec:
+  ttlSecondsAfterFinished: 100  # Delete job 100 seconds after completion
   backoffLimit: 10
   template:
     metadata:

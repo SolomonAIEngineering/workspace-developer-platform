@@ -41,7 +41,7 @@ infisical:
     # -- Image repository for the Infisical service
     repository: infisical/infisical
     # -- Specific version tag of the Infisical image. View the latest version here https://hub.docker.com/r/infisical/infisical
-    tag: "v0.93.1-postgres"
+    tag: "v0.94.1-postgres"
     # -- Pulls image only if not already present on the node
     pullPolicy: IfNotPresent
     # -- Secret references for pulling the image, if needed
@@ -72,7 +72,7 @@ ingress:
   # -- Enable or disable ingress configuration
   enabled: true
   # -- Hostname for ingress access, e.g., app.example.com
-  hostName: "infisical.solomon-ai.dev"
+  hostName: "developer.solomon-ai.app"
   # -- Specifies the ingress class, useful for multi-ingress setups
   ingressClassName: nginx
 
@@ -145,4 +145,4 @@ secrets:
   encryptionKey: "0kwKwWRCjP4iNrcJ0kwKwWRCjP4iNrcJ"
 
 # Site URL configuration
-siteUrl: "https://infisical.solomon-ai.dev"
+siteUrl: "https://developer.solomon-ai.app"
