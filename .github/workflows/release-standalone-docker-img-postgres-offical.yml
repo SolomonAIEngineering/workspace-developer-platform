@@ -1,8 +1,11 @@
 name: Release standalone docker image
 on:
     push:
+        branches:
+            - "main"
         tags:
             - "infisical/v*.*.*-postgres"
+    workflow_dispatch:
 
 jobs:
     infisical-tests:
