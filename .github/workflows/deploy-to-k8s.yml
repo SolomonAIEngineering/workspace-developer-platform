@@ -13,7 +13,7 @@ permissions:
 
 env:
   KUBERNETES_VERSION: 1.26.0
-  HELM_CHART_PATH: helm-charts/developer-platform
+  HELM_CHART_PATH: helm-charts/in
   DOCKER_IMAGE: docker.io/infisical/infisical
   GHCR_REGISTRY: ghcr.io/groundnuty
   K8S_VERSION: "1.28.0"
@@ -41,4 +41,4 @@ jobs:
         working-directory: ${{env.working-directory}}
         run: |
           doctl kubernetes cluster kubeconfig save --expiry-seconds 600 ${{env.cluster}}
-          helm upgrade --install developer-platform ./helm-charts/developer-platform --values ./helm-charts/developer-platform/values.yaml -n platform
+          helm upgrade --install infisical ./helm-charts/infisical --values ./helm-charts/infisical/values.yaml -n platform
