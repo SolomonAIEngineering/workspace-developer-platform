@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write # needed to write releases
-  id-token: write # needed for keyless signing
-  packages: write # needed for ghcr access
+  contents: write
+  id-token: write
+  packages: write
 
 env:
   KUBERNETES_VERSION: 1.26.0
@@ -61,4 +61,24 @@ jobs:
         working-directory: ${{env.working-directory}}
         run: |
           doctl kubernetes cluster kubeconfig save --expiry-seconds 600 ${{env.cluster}}
-          helm upgrade --install infisical ./helm-charts/infisical --values ./helm-charts/infisical/values.yaml -n platform
+          
+          # Create namespace if it doesn't exist
+          kubectl create namespace platform --dry-run=client -o yaml | kubectl apply -f -
+          
+          # Check if release exists
+          if ! helm status infisical -n platform >/dev/null 2>&1; then
+            echo "No existing release found. Performing fresh installation..."
+            helm install infisical ./helm-charts/infisical \
+              --values ./helm-charts/infisical/values.yaml \
+              --namespace platform \
+              --create-namespace \
+              --atomic \
+              --timeout 10m
+          else
+            echo "Existing release found. Performing upgrade..."
+            helm upgrade infisical ./helm-charts/infisical \
+              --values ./helm-charts/infisical/values.yaml \
+              --namespace platform \
+              --atomic \
+              --timeout 10m
+          fi
