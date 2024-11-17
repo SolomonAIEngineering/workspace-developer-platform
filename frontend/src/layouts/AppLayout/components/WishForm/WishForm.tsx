@@ -41,14 +41,14 @@ export const WishForm = () => {
       });
 
       createNotification({
-        text: "Your wish has been sent to the Infisical team!",
+        text: "Your wish has been sent to the Solomon AI team!",
         type: "success"
       });
 
       setIsOpen.off();
     } catch (err) {
       createNotification({
-        text: "An error occured while sending your wish to the Infisical team.",
+        text: "An error occured while sending your wish to the Solomon AI team.",
         type: "error"
       });
     }

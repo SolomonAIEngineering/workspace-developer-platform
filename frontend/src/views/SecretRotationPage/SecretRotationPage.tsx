@@ -297,7 +297,7 @@ export const SecretRotationPage = withProjectPermission(
           </div>
         </div>
         <div className="mb-2 mt-12 text-xl font-semibold text-gray-200">
-          Infisical Rotation Providers
+          Solomon AI Rotation Providers
         </div>
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 2xl:grid-cols-4">
           {isRotationProviderLoading &&
@@ -358,7 +358,7 @@ export const SecretRotationPage = withProjectPermission(
         <UpgradePlanModal
           isOpen={popUp.upgradePlan.isOpen}
           onOpenChange={(isOpen) => handlePopUpToggle("upgradePlan", isOpen)}
-          text="You can add secret rotation if you switch to Infisical's Team plan."
+          text="You can add secret rotation if you switch to Solomon AI's Team plan."
         />
       </div>
     );

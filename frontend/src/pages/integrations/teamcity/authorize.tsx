@@ -53,15 +53,15 @@ export default function TeamCityCreateIntegrationPage() {
   };
 
   return (
-    <div className="flex h-full w-full items-center justify-center">
+    <div className="flex items-center justify-center w-full h-full">
       <Head>
         <title>Authorize TeamCity Integration</title>
         <link rel="icon" href="/infisical.ico" />
       </Head>
-      <Card className="mb-12 max-w-lg rounded-md border border-mineshaft-600">
+      <Card className="max-w-lg mb-12 border rounded-md border-mineshaft-600">
         <CardTitle
-          className="px-6 text-left text-xl"
-          subTitle="After adding the details below, you will be prompted to set up an integration for a particular Infisical project and environment."
+          className="px-6 text-xl text-left"
+          subTitle="After adding the details below, you will be prompted to set up an integration for a particular Solomon AI project and environment."
         >
           <div className="flex flex-row items-center">
             <div className="inline flex items-center pb-0.5">
@@ -115,7 +115,7 @@ export default function TeamCityCreateIntegrationPage() {
           onClick={handleButtonClick}
           colorSchema="primary"
           variant="outline_bg"
-          className="mb-6 mt-2 ml-auto mr-6 w-min"
+          className="mt-2 mb-6 ml-auto mr-6 w-min"
           isLoading={isLoading}
         >
           Connect to TeamCity

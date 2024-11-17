@@ -122,7 +122,7 @@ export const IdentityRbacSection = ({ identityProjectMember, onOpenUpgradeModal 
 
     if (hasCustomRoleSelected && subscription && !subscription?.rbac) {
       onOpenUpgradeModal(
-        "You can assign custom roles to members if you upgrade your Infisical plan."
+        "You can assign custom roles to members if you upgrade your Solomon AI plan."
       );
       return;
     }

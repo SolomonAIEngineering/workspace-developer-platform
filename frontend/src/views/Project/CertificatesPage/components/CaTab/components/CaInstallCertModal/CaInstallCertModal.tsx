@@ -58,7 +58,7 @@ export const CaInstallCertModal = ({ popUp, handlePopUpToggle }: Props) => {
               value={ParentCaType.Internal}
               key={`parent-ca-type-${ParentCaType.Internal}`}
             >
-              Infisical CA
+              Solomon AI CA
             </SelectItem>
             <SelectItem
               value={ParentCaType.External}

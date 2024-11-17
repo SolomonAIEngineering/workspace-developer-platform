@@ -93,11 +93,11 @@ export default function CloudflareWorkersIntegrationPage() {
       <Card className="max-w-lg rounded-md border border-mineshaft-600 p-0">
         <CardTitle
           className="px-6 text-left"
-          subTitle="Choose which environment in Infisical you want to sync with your Cloudflare Workers project."
+          subTitle="Choose which environment in Solomon AI you want to sync with your Cloudflare Workers project."
         >
           Cloudflare Workers Integration
         </CardTitle>
-        <FormControl label="Infisical Project Environment" className="mt-2 px-6">
+        <FormControl label="Solomon AI Project Environment" className="mt-2 px-6">
           <Select
             value={selectedSourceEnvironment}
             onValueChange={(val) => setSelectedSourceEnvironment(val)}
@@ -113,7 +113,7 @@ export default function CloudflareWorkersIntegrationPage() {
             ))}
           </Select>
         </FormControl>
-        <FormControl label="Infisical Secret Path" className="mt-2 px-6">
+        <FormControl label="Solomon AI Secret Path" className="mt-2 px-6">
           <SecretPathInput
             value={secretPath}
             onChange={(value) => setSecretPath(value)}

@@ -73,7 +73,7 @@ export const AuditLogsRetentionSection = () => {
     }
   };
 
-  // render only for dedicated/self-hosted instances of Infisical
+  // render only for dedicated/self-hosted instances of Solomon AI
   if (
     window.location.origin.includes("https://app.infisical.com") ||
     window.location.origin.includes("https://gamma.infisical.com")

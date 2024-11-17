@@ -10,8 +10,8 @@ import { BillingReceiptsTab } from "../BillingReceiptsTab";
 import { BillingSelfHostedTab } from "../BillingSelfHostedTab";
 
 const tabs = [
-  { name: "Infisical Cloud", key: "tab-infisical-cloud" },
-  { name: "Infisical Self-Hosted", key: "tab-infisical-self-hosted" },
+  { name: "Solomon AI Cloud", key: "tab-infisical-cloud" },
+  { name: "Solomon AI Self-Hosted", key: "tab-infisical-self-hosted" },
   { name: "Receipts", key: "tab-receipts" },
   { name: "Billing details", key: "tab-billing-details" }
 ];

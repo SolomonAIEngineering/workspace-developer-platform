@@ -109,15 +109,15 @@ export default function TeamCityCreateIntegrationPage() {
     integrationAuthApps &&
     filteredBuildConfigs &&
     targetAppId ? (
-    <div className="flex h-full w-full items-center justify-center">
+    <div className="flex items-center justify-center w-full h-full">
       <Head>
         <title>Set Up TeamCity Integration</title>
         <link rel="icon" href="/infisical.ico" />
       </Head>
-      <Card className="mb-12 max-w-lg rounded-md border border-mineshaft-600">
+      <Card className="max-w-lg mb-12 border rounded-md border-mineshaft-600">
         <CardTitle
-          className="px-6 text-left text-xl"
-          subTitle="Choose which environment or folders in Infisical you want to sync to which project in TeamCity."
+          className="px-6 text-xl text-left"
+            subTitle="Choose which environment or folders in Solomon AI you want to sync to which project in TeamCity."
         >
           <div className="flex flex-row items-center">
             <div className="inline flex items-center pb-0.5">
@@ -209,7 +209,7 @@ export default function TeamCityCreateIntegrationPage() {
           onClick={handleButtonClick}
           color="mineshaft"
           variant="outline_bg"
-          className="mb-6 mt-2 ml-auto mr-6"
+          className="mt-2 mb-6 ml-auto mr-6"
           isLoading={isLoading}
           isDisabled={integrationAuthApps.length === 0}
         >
@@ -218,7 +218,7 @@ export default function TeamCityCreateIntegrationPage() {
       </Card>
     </div>
   ) : (
-    <div className="flex h-full w-full items-center justify-center">
+    <div className="flex items-center justify-center w-full h-full">
       <Head>
         <title>Set Up TeamCity Integration</title>
         <link rel="icon" href="/infisical.ico" />
@@ -231,12 +231,12 @@ export default function TeamCityCreateIntegrationPage() {
           alt="infisical loading indicator"
         />
       ) : (
-        <div className="flex h-max max-w-md flex-col rounded-md border border-mineshaft-600 bg-mineshaft-800 p-6 text-center text-mineshaft-200">
-          <FontAwesomeIcon icon={faBugs} className="inlineli my-2 text-6xl" />
+        <div className="flex flex-col max-w-md p-6 text-center border rounded-md h-max border-mineshaft-600 bg-mineshaft-800 text-mineshaft-200">
+          <FontAwesomeIcon icon={faBugs} className="my-2 text-6xl inlineli" />
           <p>
             Something went wrong. Please contact{" "}
             <a
-              className="inline cursor-pointer text-mineshaft-100 underline decoration-primary-500 underline-offset-4 opacity-80 duration-200 hover:opacity-100"
+              className="inline underline duration-200 cursor-pointer text-mineshaft-100 decoration-primary-500 underline-offset-4 opacity-80 hover:opacity-100"
               target="_blank"
               rel="noopener noreferrer"
               href="mailto:support@infisical.com"

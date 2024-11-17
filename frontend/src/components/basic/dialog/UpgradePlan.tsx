@@ -43,7 +43,7 @@ const UpgradePlanModal = ({ isOpen, onClose, text }: Props) => {
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-md border border-mineshaft-500 bg-bunker p-6 pt-5 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title as="h3" className="text-xl font-medium leading-6 text-primary">
-                    Unleash Infisical&apos;s Full Power
+                    Unleash Solomon-AI&apos;s Full Power
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="mb-1 text-sm text-bunker-300">{text}</p>

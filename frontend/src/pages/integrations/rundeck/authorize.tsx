@@ -53,15 +53,15 @@ export default function RundeckAuthorizeIntegrationPage() {
     }
   };
   return (
-    <div className="flex h-full w-full items-center justify-center">
+    <div className="flex items-center justify-center w-full h-full">
       <Head>
         <title>Authorize Rundeck Integration</title>
         <link rel="icon" href="/infisical.ico" />
       </Head>
-      <Card className="mb-12 max-w-lg rounded-md border border-mineshaft-600">
+      <Card className="max-w-lg mb-12 border rounded-md border-mineshaft-600">
         <CardTitle
-          className="px-6 text-left text-xl"
-          subTitle="After adding your URL and auth token, you will be prompted to set up an integration for a particular Infisical project and environment."
+          className="px-6 text-xl text-left"
+          subTitle="After adding your URL and auth token, you will be prompted to set up an integration for a particular Solomon AI project and environment."
         >
           <div className="flex flex-row items-center">
             <div className="flex items-center pb-0.5">

@@ -74,15 +74,15 @@ export default function RundeckCreateIntegrationPage() {
   };
 
   return integrationAuth && workspace ? (
-    <div className="flex h-full w-full flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center w-full h-full">
       <Head>
         <title>Set Up Rundeck Integration</title>
         <link rel="icon" href="/infisical.ico" />
       </Head>
-      <Card className="max-w-lg rounded-md border border-mineshaft-600">
+      <Card className="max-w-lg border rounded-md border-mineshaft-600">
         <CardTitle
-          className="px-6 text-left text-xl"
-          subTitle="Choose which environment or folder in Infisical you want to sync to the Rundeck Key Storage."
+          className="px-6 text-xl text-left"
+          subTitle="Choose which environment or folder in Solomon AI you want to sync to the Rundeck Key Storage."
         >
           <div className="flex flex-row items-center">
             <div className="flex items-center pb-0.5">
@@ -109,7 +109,7 @@ export default function RundeckCreateIntegrationPage() {
           </div>
         </CardTitle>
 
-        <form onSubmit={handleSubmit(onFormSubmit)} className="flex w-full flex-col px-6">
+        <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col w-full px-6">
           <Controller
             control={control}
             name="sourceEnvironment"
@@ -172,7 +172,7 @@ export default function RundeckCreateIntegrationPage() {
             type="submit"
             color="mineshaft"
             variant="outline_bg"
-            className="mb-6 mt-2 ml-auto"
+            className="mt-2 mb-6 ml-auto"
             isLoading={isSubmitting}
           >
             Create Integration
@@ -181,7 +181,7 @@ export default function RundeckCreateIntegrationPage() {
       </Card>
     </div>
   ) : (
-    <div className="flex h-full w-full items-center justify-center">
+    <div className="flex items-center justify-center w-full h-full">
       <Head>
         <title>Set Up Rundeck Integration</title>
         <link rel="icon" href="/infisical.ico" />
@@ -194,12 +194,12 @@ export default function RundeckCreateIntegrationPage() {
           alt="infisical loading indicator"
         />
       ) : (
-        <div className="flex h-max max-w-md flex-col rounded-md border border-mineshaft-600 bg-mineshaft-800 p-6 text-center text-mineshaft-200">
-          <FontAwesomeIcon icon={faBugs} className="inlineli my-2 text-6xl" />
+        <div className="flex flex-col max-w-md p-6 text-center border rounded-md h-max border-mineshaft-600 bg-mineshaft-800 text-mineshaft-200">
+          <FontAwesomeIcon icon={faBugs} className="my-2 text-6xl inlineli" />
           <p>
             Something went wrong. Please contact{" "}
             <a
-              className="inline cursor-pointer text-mineshaft-100 underline decoration-primary-500 underline-offset-4 opacity-80 duration-200 hover:opacity-100"
+              className="inline underline duration-200 cursor-pointer text-mineshaft-100 decoration-primary-500 underline-offset-4 opacity-80 hover:opacity-100"
               target="_blank"
               rel="noopener noreferrer"
               href="mailto:support@infisical.com"

@@ -31,7 +31,7 @@ const initialSyncBehaviors = [
     value: IntegrationSyncBehavior.OVERWRITE_TARGET
   },
   { label: "Import non-sensitive - Prefer values from Terraform Cloud", value: IntegrationSyncBehavior.PREFER_TARGET },
-  { label: "Import non-sensitive - Prefer values from Infisical", value: IntegrationSyncBehavior.PREFER_SOURCE }
+  { label: "Import non-sensitive - Prefer values from Solomon AI", value: IntegrationSyncBehavior.PREFER_SOURCE }
 ];
 
 const variableTypes = [{ name: "env" }, { name: "terraform" }];
@@ -113,18 +113,18 @@ export default function TerraformCloudCreateIntegrationPage() {
     selectedSourceEnvironment &&
     integrationAuthApps &&
     targetApp ? (
-    <div className="flex h-full w-full items-center justify-center">
+    <div className="flex items-center justify-center w-full h-full">
       <Head>
         <title>Create Terraform Cloud Integration</title>
         <link rel="icon" href="/infisical.ico" />
       </Head>
-      <Card className="max-w-lg rounded-md border border-mineshaft-600">
+      <Card className="max-w-lg border rounded-md border-mineshaft-600">
         <CardTitle
-          className="px-6 text-left text-xl"
-          subTitle="Specify the encironment and path within Infisical that you want to push to which project in Terraform."
+          className="px-6 text-xl text-left"
+            subTitle="Specify the encironment and path within Solomon AI that you want to push to which project in Terraform."
         >
           <div className="flex flex-row items-center">
-            <div className="inline flex items-center">
+            <div className="flex items-center inline">
               <Image
                 src="/images/integrations/Terraform.png"
                 height={35}
@@ -226,7 +226,7 @@ export default function TerraformCloudCreateIntegrationPage() {
           onClick={handleButtonClick}
           colorSchema="primary"
           variant="outline_bg"
-          className="mb-6 mt-2 ml-auto mr-6 w-min"
+          className="mt-2 mb-6 ml-auto mr-6 w-min"
           isLoading={isLoading}
           isDisabled={integrationAuthApps.length === 0}
         >

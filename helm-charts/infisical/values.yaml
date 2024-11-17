@@ -41,7 +41,7 @@ infisical:
     # -- Image repository for the Infisical service
     repository: solomonai/developer-platform
     # -- Specific version tag of the Infisical image. View the latest version here https://hub.docker.com/r/infisical/infisical
-    tag: "latest-postgres"
+    tag: "latest"
     # -- Pulls image only if not already present on the node
     pullPolicy: Always
     # -- Secret references for pulling the image, if needed

@@ -668,7 +668,7 @@ export const SecretOverviewPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Infisical CLI
+                  Solomon AI CLI
                 </a>
                 ,
                 <a
@@ -677,7 +677,7 @@ export const SecretOverviewPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Infisical API
+                  Solomon AI API
                 </a>
                 ,
                 <a
@@ -686,7 +686,7 @@ export const SecretOverviewPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Infisical SDKs
+                  Solomon AI SDKs
                 </a>
                 , and
                 <a

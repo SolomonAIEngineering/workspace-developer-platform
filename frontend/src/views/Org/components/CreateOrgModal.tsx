@@ -77,7 +77,7 @@ export const CreateOrgModal: FC<CreateOrgModalProps> = ({ isOpen, onClose }) => 
     <Modal isOpen={isOpen}>
       <ModalContent
         title="Create Organization"
-        subTitle="Looks like you're not part of any organizations. Create one to start using Infisical"
+        subTitle="Looks like you're not part of any organizations. Create one to start using Solomon AI"
       >
         <form onSubmit={handleSubmit(onFormSubmit)}>
           <Controller

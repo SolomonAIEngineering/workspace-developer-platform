@@ -163,10 +163,10 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
     return (
       <form
         onSubmit={handleLogin}
-        className="mx-auto flex w-full flex-col items-center justify-center"
+        className="flex flex-col items-center justify-center w-full mx-auto"
       >
-        <h1 className="mb-8 bg-gradient-to-b from-white to-bunker-200 bg-clip-text text-center text-xl font-medium text-transparent">
-          Login to Infisical
+        <h1 className="mb-8 text-xl font-medium text-center text-transparent bg-gradient-to-b from-white to-bunker-200 bg-clip-text">
+          Login to Solomon AI
         </h1>
         <RegionSelect />
         {config.defaultAuthOrgAuthMethod === AuthMethod.SAML && (
@@ -176,7 +176,7 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
               variant="outline_bg"
               onClick={handleSaml}
               leftIcon={<FontAwesomeIcon icon={faLock} className="mr-2" />}
-              className="mx-0 h-10 w-full"
+              className="w-full h-10 mx-0"
             >
               Continue with SAML
             </Button>
@@ -189,7 +189,7 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
               variant="outline_bg"
               onClick={handleOidc}
               leftIcon={<FontAwesomeIcon icon={faLock} className="mr-2" />}
-              className="mx-0 h-10 w-full"
+              className="w-full h-10 mx-0"
             >
               Continue with OIDC
             </Button>
@@ -202,10 +202,10 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
   return (
     <form
       onSubmit={handleLogin}
-      className="mx-auto flex w-full flex-col items-center justify-center"
+      className="flex flex-col items-center justify-center w-full mx-auto"
     >
-      <h1 className="mb-8 bg-gradient-to-b from-white to-bunker-200 bg-clip-text text-center text-xl font-medium text-transparent">
-        Login to Infisical
+      <h1 className="mb-8 text-xl font-medium text-center text-transparent bg-gradient-to-b from-white to-bunker-200 bg-clip-text">
+        Login to Solomon AI
       </h1>
       <RegionSelect />
       {shouldDisplayLoginMethod(LoginMethod.SAML) && (
@@ -215,7 +215,7 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
             variant="outline_bg"
             onClick={handleSaml}
             leftIcon={<FontAwesomeIcon icon={faLock} className="mr-2" />}
-            className="mx-0 h-10 w-full"
+            className="w-full h-10 mx-0"
           >
             Continue with SAML
           </Button>
@@ -228,7 +228,7 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
             variant="outline_bg"
             onClick={handleOidc}
             leftIcon={<FontAwesomeIcon icon={faLock} className="mr-2" />}
-            className="mx-0 h-10 w-full"
+            className="w-full h-10 mx-0"
           >
             Continue with OIDC
           </Button>
@@ -243,7 +243,7 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
               router.push("/login/ldap");
             }}
             leftIcon={<FontAwesomeIcon icon={faLock} className="mr-2" />}
-            className="mx-0 h-10 w-full"
+            className="w-full h-10 mx-0"
           >
             Continue with LDAP
           </Button>
@@ -266,7 +266,7 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
                 );
                 window.close();
               }}
-              className="h-10 w-full bg-mineshaft-600"
+              className="w-full h-10 bg-mineshaft-600"
             >
               <FontAwesomeIcon icon={faGoogle} />
             </IconButton>
@@ -289,7 +289,7 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
 
                 window.close();
               }}
-              className="h-10 w-full bg-mineshaft-600"
+              className="w-full h-10 bg-mineshaft-600"
             >
               <FontAwesomeIcon icon={faGithub} />
             </IconButton>
@@ -312,7 +312,7 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
 
                 window.close();
               }}
-              className="h-10 w-full bg-mineshaft-600"
+              className="w-full h-10 bg-mineshaft-600"
             >
               <FontAwesomeIcon icon={faGitlab} />
             </IconButton>
@@ -349,7 +349,7 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
               isRequired
               autoComplete="current-password"
               id="current-password"
-              className="select:-webkit-autofill:focus h-10"
+              className="h-10 select:-webkit-autofill:focus"
             />
           </div>
           {shouldShowCaptcha && (
@@ -385,9 +385,9 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
         shouldDisplayLoginMethod(LoginMethod.GOOGLE) ||
         shouldDisplayLoginMethod(LoginMethod.GITHUB) ||
         shouldDisplayLoginMethod(LoginMethod.GITLAB)) ? (
-        <div className="mt-6 flex flex-row text-sm text-bunker-400">
+        <div className="flex flex-row mt-6 text-sm text-bunker-400">
           <Link href="/signup">
-            <span className="cursor-pointer duration-200 hover:text-bunker-200 hover:underline hover:decoration-primary-700 hover:underline-offset-4">
+            <span className="duration-200 cursor-pointer hover:text-bunker-200 hover:underline hover:decoration-primary-700 hover:underline-offset-4">
               Don&apos;t have an account yet? {t("login.create-account")}
             </span>
           </Link>
@@ -396,9 +396,9 @@ export const InitialStep = ({ setStep, email, setEmail, password, setPassword }:
         <div className="mt-4" />
       )}
       {shouldDisplayLoginMethod(LoginMethod.EMAIL) && (
-        <div className="mt-2 flex flex-row text-sm text-bunker-400">
+        <div className="flex flex-row mt-2 text-sm text-bunker-400">
           <Link href="/verify-email">
-            <span className="cursor-pointer duration-200 hover:text-bunker-200 hover:underline hover:decoration-primary-700 hover:underline-offset-4">
+            <span className="duration-200 cursor-pointer hover:text-bunker-200 hover:underline hover:decoration-primary-700 hover:underline-offset-4">
               Forgot password? Recover your account
             </span>
           </Link>

@@ -184,14 +184,14 @@ export default function QoveryCreateIntegrationPage() {
   };
 
   return integrationAuth && workspace && selectedSourceEnvironment ? (
-    <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-tr from-mineshaft-900 to-bunker-900">
+    <div className="flex flex-col items-center justify-center w-full h-full bg-gradient-to-tr from-mineshaft-900 to-bunker-900">
       <Head>
         <title>Set Up Qovery Integration</title>
         <link rel="icon" href="/infisical.ico" />
       </Head>
-      <Card className="max-w-lg rounded-md border border-mineshaft-600 p-0">
+      <Card className="max-w-lg p-0 border rounded-md border-mineshaft-600">
         <CardTitle
-          className="px-6 text-left text-xl"
+          className="px-6 text-xl text-left"
           subTitle="Choose which environment in Infisical you want to sync to Checkly environment variables."
         >
           <div className="flex flex-row items-center">
@@ -220,8 +220,8 @@ export default function QoveryCreateIntegrationPage() {
         </CardTitle>
         <Tabs defaultValue={TabSections.InfisicalSettings} className="px-6">
           <TabList>
-            <div className="flex w-full flex-row border-b border-mineshaft-600">
-              <Tab value={TabSections.InfisicalSettings}>Infisical Settings</Tab>
+            <div className="flex flex-row w-full border-b border-mineshaft-600">
+              <Tab value={TabSections.InfisicalSettings}>Solomon AI Settings</Tab>
               <Tab value={TabSections.QoverySettings}>Qovery Settings</Tab>
             </div>
           </TabList>
@@ -233,7 +233,7 @@ export default function QoveryCreateIntegrationPage() {
               animate={{ opacity: 1, translateX: 0 }}
               exit={{ opacity: 0, translateX: 30 }}
             >
-              <FormControl label="Infisical Project Environment">
+              <FormControl label="Solomon AI Project Environment">
                 <Select
                   value={selectedSourceEnvironment}
                   onValueChange={(val) => setSelectedSourceEnvironment(val)}
@@ -393,14 +393,14 @@ export default function QoveryCreateIntegrationPage() {
           Create Integration
         </Button>
       </Card>
-      {/* <div className="border-t border-mineshaft-800 w-full max-w-md mt-6"/>
-      <div className="flex flex-col bg-mineshaft-800 border border-mineshaft-600 w-full p-4 max-w-lg mt-6 rounded-md">
-        <div className="flex flex-row items-center"><FontAwesomeIcon icon={faCircleInfo} className="text-mineshaft-200 text-xl"/> <span className="ml-3 text-md text-mineshaft-100">Pro Tip</span></div>
-        <span className="text-mineshaft-300 text-sm mt-4">After creating an integration, your secrets will start syncing immediately. This might cause an unexpected override of current secrets in Qovery with secrets from Infisical.</span>
+      {/* <div className="w-full max-w-md mt-6 border-t border-mineshaft-800"/>
+      <div className="flex flex-col w-full max-w-lg p-4 mt-6 border rounded-md bg-mineshaft-800 border-mineshaft-600">
+        <div className="flex flex-row items-center"><FontAwesomeIcon icon={faCircleInfo} className="text-xl text-mineshaft-200"/> <span className="ml-3 text-md text-mineshaft-100">Pro Tip</span></div>
+        <span className="mt-4 text-sm text-mineshaft-300">After creating an integration, your secrets will start syncing immediately. This might cause an unexpected override of current secrets in Qovery with secrets from Infisical.</span>
       </div> */}
     </div>
   ) : (
-    <div className="flex h-full w-full items-center justify-center">
+    <div className="flex items-center justify-center w-full h-full">
       <Head>
         <title>Set Up Qovery Integration</title>
         <link rel="icon" href="/infisical.ico" />
@@ -413,12 +413,12 @@ export default function QoveryCreateIntegrationPage() {
           alt="infisical loading indicator"
         />
       ) : (
-        <div className="flex h-max max-w-md flex-col rounded-md border border-mineshaft-600 bg-mineshaft-800 p-6 text-center text-mineshaft-200">
-          <FontAwesomeIcon icon={faBugs} className="inlineli my-2 text-6xl" />
+        <div className="flex flex-col max-w-md p-6 text-center border rounded-md h-max border-mineshaft-600 bg-mineshaft-800 text-mineshaft-200">
+          <FontAwesomeIcon icon={faBugs} className="my-2 text-6xl inlineli" />
           <p>
             Something went wrong. Please contact{" "}
             <a
-              className="inline cursor-pointer text-mineshaft-100 underline decoration-primary-500 underline-offset-4 opacity-80 duration-200 hover:opacity-100"
+              className="inline underline duration-200 cursor-pointer text-mineshaft-100 decoration-primary-500 underline-offset-4 opacity-80 hover:opacity-100"
               target="_blank"
               rel="noopener noreferrer"
               href="mailto:support@infisical.com"

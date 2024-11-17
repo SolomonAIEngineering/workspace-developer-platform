@@ -32,7 +32,7 @@ export const GroupsSection = () => {
     if (!subscription?.groups) {
       handlePopUpOpen("upgradePlan", {
         description:
-          "You can manage users more efficiently with groups if you upgrade your Infisical plan."
+          "You can manage users more efficiently with groups if you upgrade your Solomon AI plan."
       });
     } else {
       handlePopUpOpen("group");

@@ -26,13 +26,13 @@ type Story = StoryObj<typeof Button>;
 // More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
 export const Primary: Story = {
   args: {
-    children: "Hello Infisical"
+    children: "Hello Solomon AI"
   }
 };
 
 export const Secondary: Story = {
   args: {
-    children: "Hello Infisical",
+    children: "Hello Solomon AI",
     colorSchema: "secondary",
     variant: "outline"
   }
@@ -40,14 +40,14 @@ export const Secondary: Story = {
 
 export const Star: Story = {
   args: {
-    children: "Hello Infisical",
+    children: "Hello Solomon AI",
     variant: "star"
   }
 };
 
 export const Danger: Story = {
   args: {
-    children: "Hello Infisical",
+    children: "Hello Solomon AI",
     colorSchema: "danger",
     variant: "solid"
   }
@@ -55,42 +55,42 @@ export const Danger: Story = {
 
 export const Plain: Story = {
   args: {
-    children: "Hello Infisical",
+    children: "Hello Solomon AI",
     variant: "plain"
   }
 };
 
 export const Disabled: Story = {
   args: {
-    children: "Hello Infisical",
+    children: "Hello Solomon AI",
     disabled: true
   }
 };
 
 export const FullWidth: Story = {
   args: {
-    children: "Hello Infisical",
+    children: "Hello Solomon AI",
     isFullWidth: true
   }
 };
 
 export const Loading: Story = {
   args: {
-    children: "Hello Infisical",
+    children: "Hello Solomon AI",
     isLoading: true
   }
 };
 
 export const LeftIcon: Story = {
   args: {
-    children: "Hello Infisical",
+    children: "Hello Solomon AI",
     leftIcon: <FontAwesomeIcon icon={faPlus} className="pr-0.5" />
   }
 };
 
 export const RightIcon: Story = {
   args: {
-    children: "Hello Infisical",
+    children: "Hello Solomon AI",
     rightIcon: <FontAwesomeIcon icon={faPlus} className="pr-0.5" />
   }
 };
